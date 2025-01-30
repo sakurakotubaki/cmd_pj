@@ -1,4 +1,4 @@
-.PHONY: run build clean
+.PHONY: run build clean test errorText
 
 # デフォルトのターゲット
 run:
@@ -15,3 +15,11 @@ clean:
 # GETリクエストの実行
 get:
 	curl -s http://localhost:8080/users | jq '.'
+
+# hello test
+test:
+	go test ./test/hello_test.go
+
+# error test
+errorText:
+	go test ./test/hoge_test.go
